@@ -1,11 +1,16 @@
 import { Outlet } from '@tanstack/react-router'
-import { Navigation } from '@/components/Navigation'
+import { Header } from '@/components/Header'
+import { Main } from '@/components/Main'
+import { Footer } from '@/components/Footer'
 
 export function Layout() {
   return (
-    <div>
-      <Navigation />
-      <Outlet />
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <Main>
+        <Outlet />
+      </Main>
+      <Footer />
     </div>
   )
 }
