@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import type { IPaginationProps } from '@/types/common'
 import {
   Pagination as PaginationComponent,
@@ -14,8 +15,7 @@ export function Pagination({
   totalPages,
   handleChangePage,
 }: IPaginationProps) {
-  if (totalPages === undefined) return null
-  if (totalPages <= 1) return null
+  if (totalPages === undefined || totalPages <= 1) return null
 
   function getPageNumbers() {
     const pagesToShow = []
@@ -43,9 +43,9 @@ export function Pagination({
         <PaginationItem>
           <PaginationPrevious
             onClick={() => handleChangePage(currentPage - 1)}
-            className={
-              currentPage === 1 ? 'pointer-events-none opacity-50' : undefined
-            }
+            className={cn(
+              currentPage === 1 && 'pointer-events-none opacity-50'
+            )}
           />
         </PaginationItem>
         {getPageNumbers()?.map((page, index) => (
@@ -65,11 +65,9 @@ export function Pagination({
         <PaginationItem>
           <PaginationNext
             onClick={() => handleChangePage(currentPage + 1)}
-            className={
-              currentPage === totalPages
-                ? 'pointer-events-none opacity-50'
-                : undefined
-            }
+            className={cn(
+              currentPage === totalPages && 'pointer-events-none opacity-50'
+            )}
           />
         </PaginationItem>
       </PaginationContent>

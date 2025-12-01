@@ -15,7 +15,7 @@ const mockPostData = {
   userId: 2,
 }
 
-test('Snapshot компонента PostCard должен быть корректным', () => {
+test('The PostCard component snapshot must be correct', () => {
   const { asFragment } = render(<PostCard {...mockPostData} />)
 
   expect(asFragment()).toMatchSnapshot()

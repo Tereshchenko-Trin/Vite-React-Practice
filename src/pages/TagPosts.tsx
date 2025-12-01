@@ -5,6 +5,8 @@ import type {
   IFetchPostsResponse,
   IPaginationProps,
 } from '@/types/common'
+import { TitleWrapper } from '@/components/TitleWrapper'
+import { Title } from '@/components/Title'
 import { Spinner } from '@/components/ui/spinner'
 import { PostCard } from '@/components/PostCard'
 import { PostsList } from '@/components/PostsList'
@@ -26,16 +28,16 @@ export function TagPosts({ currentPage, handleChangePage }: IPaginationProps) {
 
   if (isLoading)
     return (
-      <div className="flex justify-center items-center h-screen">
+      <TitleWrapper>
         <Spinner className="size-8 text-blue-900" />
-      </div>
+      </TitleWrapper>
     )
 
   if (isError)
     return (
-      <div className="flex justify-center items-center h-screen">
-        <h1>Posts not found</h1>
-      </div>
+      <TitleWrapper>
+        <Title>Posts not found</Title>
+      </TitleWrapper>
     )
 
   function renderPosts(posts: IPostData[] | undefined) {
