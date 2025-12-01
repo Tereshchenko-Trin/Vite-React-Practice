@@ -19,11 +19,11 @@ export function PostCard({ id, title, body, tags, reactions }: IPostData) {
   }
 
   return (
-    <Card className="w-full max-w-lg">
+    <Card className="w-full min-w-xs">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="line-clamp-1">{title}</CardTitle>
         <CardDescription>{renderListItems(tags)}</CardDescription>
-        <CardContent>{body}</CardContent>
+        <CardContent className="line-clamp-4">{body}</CardContent>
       </CardHeader>
       <CardFooter className="flex-col gap-2">
         <Button type="button" className="w-full ">

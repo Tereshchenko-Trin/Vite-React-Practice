@@ -25,3 +25,16 @@ export interface IAlertState {
   type: 'success' | 'error' | 'info'
   message: string
 }
+
+export interface IChatMessage {
+  id: string
+  sender: 'user' | 'server'
+  text: string
+  timestamp: number
+}
+
+export interface IWebSocketContextType {
+  sendMessage: (message: string) => void
+  messages: IChatMessage[]
+  connectionStatus: 'connecting' | 'open' | 'closing' | 'closed'
+}

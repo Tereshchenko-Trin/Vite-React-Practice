@@ -45,7 +45,7 @@ export function AddPostForm({
   })
 
   return (
-    <Card className="w-full max-w-lg">
+    <Card className="w-full max-w-md h-fit">
       <CardContent>
         <form
           onSubmit={(event) => {
@@ -105,7 +105,11 @@ export function AddPostForm({
               </>
             )}
           </form.Field>
-          <Button type="submit" disabled={mutation.isPending} variant="outline">
+          <Button
+            type="submit"
+            disabled={mutation.isPending}
+            className="bg-sky-900 focus:bg-sky-700"
+          >
             {mutation.isPending ? 'Publication...' : 'Add post'}
           </Button>
         </form>
