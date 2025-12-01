@@ -11,7 +11,7 @@ vi.mock('@tanstack/react-router', () => ({
   Link: (props: IProp) => <a href={props.to}>{props.children}</a>,
 }))
 
-test('Navigation рендерит все навигационные ссылки с правильными href и текстом', () => {
+test('Navigation renders all navigation links with the correct href and text', () => {
   render(<Navigation />)
 
   const homeLink = screen.getByText('Home')

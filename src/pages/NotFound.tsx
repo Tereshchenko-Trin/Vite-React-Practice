@@ -1,3 +1,10 @@
+import { TitleWrapper } from '@/components/TitleWrapper'
+import { Title } from '@/components/Title'
+
 export function NotFound() {
-  return <h1>Page not found</h1>
+  return (
+    <TitleWrapper>
+      <Title>Page not found</Title>
+    </TitleWrapper>
+  )
 }

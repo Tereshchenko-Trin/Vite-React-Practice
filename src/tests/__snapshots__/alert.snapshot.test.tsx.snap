@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Snapshot компонента Alert типа "success" должен быть корректным 1`] = `
+exports[`Snapshot of the Alert component of type "success" must be correct 1`] = `
 <DocumentFragment>
   <div
     class="w-full max-w-sm shadow-lg rounded-lg overflow-hidden pointer-events-auto"

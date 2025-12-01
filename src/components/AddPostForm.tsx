@@ -59,9 +59,8 @@ export function AddPostForm({
             name="title"
             validators={{
               onChange: ({ value }) =>
-                value.length < 5
-                  ? 'The title must be longer than 5 characters'
-                  : undefined,
+                value.length < 5 &&
+                'The title must be longer than 5 characters',
             }}
           >
             {({ state, handleChange, handleBlur }) => (

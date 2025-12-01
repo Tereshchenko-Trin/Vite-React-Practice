@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Snapshot компонента PostCard должен быть корректным 1`] = `
+exports[`The PostCard component snapshot must be correct 1`] = `
 <DocumentFragment>
   <div
     class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm w-full min-w-xs"
