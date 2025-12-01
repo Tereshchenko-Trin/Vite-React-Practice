@@ -39,7 +39,7 @@ export function TagPosts({ currentPage, handleChangePage }: IPaginationProps) {
     )
 
   function renderPosts(posts: IPostData[] | undefined) {
-    if (posts === undefined) return null
+    if (!posts) return null
 
     return posts.map((post: IPostData) => {
       return <PostCard key={post.id} {...post} />

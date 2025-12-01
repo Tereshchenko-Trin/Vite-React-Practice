@@ -14,11 +14,13 @@ export function Pagination({
   totalPages,
   handleChangePage,
 }: IPaginationProps) {
+  if (totalPages === undefined) return null
   if (totalPages <= 1) return null
 
   function getPageNumbers() {
     const pagesToShow = []
     pagesToShow.push(1)
+    if (totalPages === undefined) return
 
     if (currentPage > 3) pagesToShow.push('...')
 
@@ -46,7 +48,7 @@ export function Pagination({
             }
           />
         </PaginationItem>
-        {getPageNumbers().map((page, index) => (
+        {getPageNumbers()?.map((page, index) => (
           <PaginationItem key={index}>
             {page === '...' || page === '..' ? (
               <PaginationEllipsis />

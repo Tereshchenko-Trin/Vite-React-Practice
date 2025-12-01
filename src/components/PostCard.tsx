@@ -9,9 +9,10 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 
-export function PostCard({ id, title, body, tags }: IPostData) {
+// TODO: open post page on click button read more
+export function PostCard({ title, body, tags }: IPostData) {
   function renderListItems(arr: string[]): React.ReactNode {
-    if (!arr) return null
+    if (arr === undefined || arr?.length === 0) return null
 
     return arr.map((item) => {
       return `#${item} `
