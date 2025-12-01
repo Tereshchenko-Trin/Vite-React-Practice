@@ -13,6 +13,12 @@ export interface IReactions {
   dislikes: number
 }
 
+export interface IFetchParams {
+  category?: string
+  limit?: number
+  skip?: number
+}
+
 export interface IFetchPostsResponse {
   posts: IPostData[]
   total: number
@@ -37,4 +43,10 @@ export interface IWebSocketContextType {
   sendMessage: (message: string) => void
   messages: IChatMessage[]
   connectionStatus: 'connecting' | 'open' | 'closing' | 'closed'
+}
+
+export interface IPaginationProps {
+  currentPage: number
+  totalPages?: number
+  handleChangePage: (page: number) => void
 }

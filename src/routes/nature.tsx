@@ -1,17 +1,17 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { Home } from '@/pages/Home'
+import { TagPosts } from '@/pages/TagPosts'
 import { z } from 'zod'
 
 const natureSearchSchema = z.object({
   page: z.number().int().min(1).default(1),
 })
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute('/nature')({
   validateSearch: natureSearchSchema,
-  component: HomeComponent,
+  component: TagPostsPageComponent,
 })
 
-function HomeComponent() {
+function TagPostsPageComponent() {
   const { page } = Route.useSearch()
   const navigate = useNavigate()
 
@@ -19,7 +19,7 @@ function HomeComponent() {
     if (newPage < 1) return
 
     navigate({
-      to: '/',
+      to: '/nature',
       search: (prev) => ({
         ...prev,
         page: newPage,
@@ -28,5 +28,5 @@ function HomeComponent() {
     })
   }
 
-  return <Home currentPage={page} handleChangePage={handleChangePage} />
+  return <TagPosts currentPage={page} handleChangePage={handleChangePage} />
 }

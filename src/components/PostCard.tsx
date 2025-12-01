@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 
-export function PostCard({ id, title, body, tags, reactions }: IPostData) {
+export function PostCard({ id, title, body, tags }: IPostData) {
   function renderListItems(arr: string[]): React.ReactNode {
     if (!arr) return null
 

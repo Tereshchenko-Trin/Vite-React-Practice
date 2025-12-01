@@ -11,12 +11,8 @@ const navItems: INavItem[] = [
     children: 'Home',
   },
   {
-    to: '/first',
-    children: 'First',
-  },
-  {
-    to: '/second',
-    children: 'Second',
+    to: '/nature',
+    children: 'Nature',
   },
 ]
 
